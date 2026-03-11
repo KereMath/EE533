@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Problem 2.2 -- Entropy of Functions}{2}{section.1}%
+\contentsline {paragraph}{(a) $Y = 2^X$.}{2}{section*.4}%
+\contentsline {paragraph}{(b) $Y = \cos X$.}{2}{section*.5}%
+\contentsline {section}{\numberline {2}Problem 2.3 -- Minimum Entropy}{3}{section.2}%
+\contentsline {paragraph}{Claim.}{3}{section*.8}%
+\contentsline {paragraph}{Proof.}{3}{section*.9}%
+\contentsline {paragraph}{Conclusion.}{3}{section*.10}%
+\contentsline {section}{\numberline {3}Problem 2.10 -- Entropy of a Disjoint Mixture}{4}{section.3}%
+\contentsline {paragraph}{(a) Expression for $\mathrm {H}(X)$.}{4}{section*.13}%
+\contentsline {paragraph}{(b) Bound $2^{\mathrm {H}(X)} \le 2^{\mathrm {H}(X_1)} + 2^{\mathrm {H}(X_2)}$.}{4}{section*.14}%
+\contentsline {paragraph}{Interpretation.}{5}{section*.15}%
+\contentsline {section}{\numberline {4}Problem 2.39 -- Entropy and Pairwise Independence}{6}{section.4}%
+\contentsline {paragraph}{Setup.}{6}{section*.18}%
+\contentsline {paragraph}{(a) Minimum value of $\mathrm {H}(X,Y,Z)$.}{6}{section*.19}%
+\contentsline {paragraph}{(b) Achieving example: $Z = X \oplus Y$.}{6}{section*.20}%
+\contentsline {paragraph}{Conclusion.}{6}{section*.21}%
+\contentsline {section}{\numberline {5}Problem 3.3 -- Piece of Cake}{7}{section.5}%
+\contentsline {paragraph}{Setup.}{7}{section*.24}%
+\contentsline {paragraph}{Exponent via the Law of Large Numbers.}{7}{section*.25}%
+\contentsline {paragraph}{Computing $\mathbf {E}[\log _2 M]$.}{7}{section*.26}%
+\contentsline {paragraph}{Size to first order in the exponent.}{7}{section*.27}%
+\contentsline {paragraph}{Closed-form exponent.}{8}{section*.28}%
+\contentsline {paragraph}{Interpretation.}{8}{section*.29}%
