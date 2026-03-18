@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{apacite}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\newtheorem*{theorem*}{Theorem}
+
+\begin{document}
+
+\begin{center}
+{\large\textbf{EE 533 -- Assignment 1}} \quad Kerem Recep Gür \quad 2448462
+\end{center}
+\medskip\hrule\bigskip
+
+\section*{Problem 2.2 }
+
+For any injective $f$, $H(f(X))=H(X)$. For any $g$, $H(g(X))\le H(X)$, with equality iff $g$ is injective on the support of $X$.
+
+\textbf{(a) $Y=2^X$.} $f(x)=2^x$ is injective since $2^{x_1}=2^{x_2}\Rightarrow x_1=x_2$. Hence $H(Y)=H(X)$.
+
+\textbf{(b) $Y=\cos X$.} Cosine is not injective since $\cos\theta=\cos(-\theta)$, so $H(Y)\le H(X)$.
+
+\section*{Problem 2.3}
+
+$$H(\mathbf{p})=-\sum_{i=1}^n p_i\log p_i$$
+
+For $1\ge p_i\ge 0$, we have $\log p_i\le 0$, so each term $p_i\log p_i\le 0$, and therefore $-p_i\log p_i\ge 0$. Hence $H(\mathbf{p})\ge 0$, with equality iff $p_i\log p_i=0$ for all $i$, which holds iff $p_i=0$ or $p_i=1$ for all $i$. Since $\sum p_i=1$, exactly one $p_k=1$ and all others are $0$. There are $n$ such vectors; denoting $\mathbf{e}_k=(0,\dots,0,\underbrace{1}_{k\text{-th}},0,\dots,0)$, the minimum is achieved iff $\mathbf{p}\in\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$.
+
+\section*{Problem 2.10 }
+
+$X_1$ and $X_2$ have disjoint alphabets. $X=X_1$ with probability $\alpha$, $X=X_2$ with probability $1-\alpha$.
+\textbf{(a)} Since the alphabets are disjoint, $p(k)=\alpha p_1(k)$ for $k\in\mathcal{X}_1$ and $p(k)=(1-\alpha)p_2(k)$ for $k\in\mathcal{X}_2$. Then:
+\begin{align*}
+H(X) &= -\sum_{k\in\mathcal{X}_1}\alpha p_1(k)\log(\alpha p_1(k)) - \sum_{k\in\mathcal{X}_2}(1-\alpha)p_2(k)\log((1-\alpha)p_2(k))\\
+&= -\sum_{k\in\mathcal{X}_1}\alpha p_1(k)(\log\alpha+\log p_1(k)) - \sum_{k\in\mathcal{X}_2}(1-\alpha)p_2(k)(\log(1-\alpha)+\log p_2(k))\\
+&= -\alpha\log\alpha\underbrace{\sum_{k\in\mathcal{X}_1} p_1(k)}_{=1} - \alpha\underbrace{\sum_{k\in\mathcal{X}_1} p_1(k)\log p_1(k)}_{=-H(X_1)} - (1-\alpha)\log(1-\alpha)\underbrace{\sum_{k\in\mathcal{X}_2} p_2(k)}_{=1} - (1-\alpha)\underbrace{\sum_{k\in\mathcal{X}_2} p_2(k)\log p_2(k)}_{=-H(X_2)}\\
+&= \underbrace{-\alpha\log\alpha-(1-\alpha)\log(1-\alpha)}_{=:\,h(\alpha)} + \alpha H(X_1) + (1-\alpha)H(X_2).
+\end{align*}
+
+\textbf{(b)} We show $2^{H(X)}\le 2^{H(X_1)}+2^{H(X_2)}$. Let $a=H(X_1)$, $b=H(X_2)$. From (a):
+\begin{align*}
+2^{H(X)} &= 2^{h(\alpha)+\alpha a+(1-\alpha)b}\\
+&= 2^{-\alpha\log\alpha-(1-\alpha)\log(1-\alpha)+\alpha a+(1-\alpha)b}\\
+&= 2^{\alpha(a-\log\alpha)+(1-\alpha)(b-\log(1-\alpha))}\\
+&= 2^{\alpha\log\frac{2^a}{\alpha}+(1-\alpha)\log\frac{2^b}{1-\alpha}}\\
+&= \left(\frac{2^a}{\alpha}\right)^{\!\alpha}\cdot\left(\frac{2^b}{1-\alpha}\right)^{\!1-\alpha}.
+\end{align*}
+By the weighted AM-GM inequality $\alpha\cdot x+(1-\alpha)\cdot y\ge x^\alpha y^{1-\alpha}$ with $x=\frac{2^a}{\alpha}$ and $y=\frac{2^b}{1-\alpha}$:
+\[
+2^a+2^b = \alpha\cdot\frac{2^a}{\alpha}+(1-\alpha)\cdot\frac{2^b}{1-\alpha} \ge \left(\frac{2^a}{\alpha}\right)^{\!\alpha}\cdot\left(\frac{2^b}{1-\alpha}\right)^{\!1-\alpha} = 2^{H(X)}.
+\]
+
+Hence $2^{H(X)}\le 2^{H(X_1)}+2^{H(X_2)}$
+\section*{Problem 2.39 }
+
+$X,Y,Z$ are $\mathrm{Ber}(1/2)$ with $I(X;Y)=I(X;Z)=I(Y;Z)=0$.
+
+\textbf{(a)} Each marginal has entropy 1 bit. Since $I(X;Y)=0\Leftrightarrow H(X,Y)=H(X)+H(Y)$, we have $H(X,Y)=2$ bits. By the chain rule:
+\[
+  H(X,Y,Z)=H(X,Y)+H(Z\mid X,Y)=2+H(Z\mid X,Y)\ge 2.
+\]
+Equality holds iff $Z$ is a deterministic function of $(X,Y)$. \newline
+
+\textbf{(b)} Let $X$ and $Y$ be independent $\mathrm{Ber}(1/2)$ and $Z:=X\oplus Y$. Since $Z$ is fully determined by $X$ and $Y$, we have $H(Z\mid X,Y)=0$ and $H(X,Y,Z)=2$ bits. Pairwise independence holds since for any $(x,z)$, the probability $P(X=x, Z=z) = P(X=x, Y=z\oplus x) = 1/4 = P(X=x)P(Z=z)$, and by commutativity of XOR the same holds for $Y$ and $Z$.
+
+\section*{Problem 3.3}
+
+At each cut the surviving piece is multiplied by $M_i=2/3$ (with probability $3/4$) or $3/5$ (with probability $1/4$), independently. After $n$ cuts: $S_n=\prod_{i=1}^n M_i$. Taking logarithms and applying the weak law of large numbers (valid since $M_i$ are bounded):
+\[
+  \frac{1}{n}\log_2 S_n\xrightarrow{\Pr}E[\log_2 M]
+  =\tfrac{3}{4}\log_2\tfrac{2}{3}+\tfrac{1}{4}\log_2\tfrac{3}{5}
+  \approx -0.623.
+\]
+Therefore, to first order in the exponent:
+\[
+  S_n\;\dot{=}\;\left(\frac{2}{3}\right)^{\!3n/4}\!\cdot\left(\frac{3}{5}\right)^{\!n/4}
+  =\left(\frac{8}{45}\right)^{\!n/4}\approx 2^{-0.623\,n},
+\]
+\bibliographystyle{apacite}
+
+\end{document}

@@ -1,0 +1,220 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\begin{document}
+
+\begin{center}
+{\large\textbf{EE 533 -- Assignment 2}} \quad Kerem Recep Gür \quad 2448462
+\end{center}
+\medskip\hrule\bigskip
+
+%-----------------------------------------------------------------------
+\section*{Problem 1}
+
+Let $X$ and $Y$ be geometric random variables with PMFs
+\[
+  p_X(x)=\tau(1-\tau)^x,\quad x\in\mathbb{Z}_{\ge 0},
+  \qquad
+  p_Y(y)=s(1-s)^{y-1},\quad y\in\mathbb{Z}_{+},
+\]
+and let $Z$ be uniform on $\{1,2,\ldots,k\}$, so $p_Z(z)=1/k$.
+
+\textbf{(a) $D(p_X\|p_Y)$.}
+The support of $p_X$ is $\{0,1,2,\ldots\}$, while $p_Y$ is defined only on
+$\{1,2,\ldots\}$, so $p_Y(0)=0$.  Since $p_X(0)=\tau>0$ but $p_Y(0)=0$,
+the term $p_X(0)\log\frac{p_X(0)}{p_Y(0)}$ diverges.  Therefore
+\[
+  D(p_X\|p_Y)=+\infty.
+\]
+
+\textbf{(b) $D(p_Y\|p_X)$.}
+Every $y\ge 1$ lies in the support of both $p_Y$ and $p_X$, so no term
+diverges.  Expanding the log:
+\begin{align*}
+  D(p_Y\|p_X)
+  &=\sum_{y=1}^{\infty}p_Y(y)\ln\frac{p_Y(y)}{p_X(y)}\\
+  &=\sum_{y=1}^{\infty}s(1-s)^{y-1}
+    \bigl[\ln s-\ln\tau+(y-1)\ln(1-s)-y\ln(1-\tau)\bigr].
+\end{align*}
+Splitting into three sums and using $\sum_{y=1}^{\infty}p_Y(y)=1$,
+$\mathbb{E}[Y]=1/s$, and $\mathbb{E}[Y-1]=(1-s)/s$:
+\[
+  D(p_Y\|p_X)
+  =\ln\frac{s}{\tau}
+  +\frac{1-s}{s}\ln(1-s)
+  -\frac{1}{s}\ln(1-\tau).
+\]
+
+\textbf{(c) $D(p_Z\|p_Y)$.}
+\begin{align*}
+  D(p_Z\|p_Y)
+  &=\sum_{z=1}^{k}\frac{1}{k}\ln\frac{1/k}{s(1-s)^{z-1}}\\
+  &=\frac{1}{k}\sum_{z=1}^{k}\Bigl[-\ln k-\ln s-(z-1)\ln(1-s)\Bigr]\\
+  &=-\ln k-\ln s-\frac{\ln(1-s)}{k}\sum_{z=1}^{k}(z-1).
+\end{align*}
+Since $\sum_{z=1}^{k}(z-1)=k(k-1)/2$,
+\[
+  D(p_Z\|p_Y)
+  =-\ln k-\ln s-\frac{k-1}{2}\ln(1-s).
+\]
+
+%-----------------------------------------------------------------------
+\section*{Problem 2.34}
+
+\textbf{Claim.} For any Markov chain $X_0\to X_1\to X_2\to\cdots$,
+the conditional entropy $H(X_0\mid X_n)$ is nondecreasing in $n$.
+
+\textbf{Proof.} It suffices to show $H(X_0\mid X_n)\le H(X_0\mid X_{n+1})$
+for every $n\ge 0$.
+
+\emph{Step 1.}  By the Markov property, $X_0$ and $X_{n+1}$ are
+conditionally independent given $X_n$, i.e.\ $X_0\perp X_{n+1}\mid X_n$.
+Conditional independence implies
+\[
+  H(X_0\mid X_n,X_{n+1})=H(X_0\mid X_n). \tag{1}
+\]
+
+\emph{Step 2.}  Conditioning on additional information cannot increase
+entropy:
+\[
+  H(X_0\mid X_n,X_{n+1})\le H(X_0\mid X_{n+1}). \tag{2}
+\]
+
+Combining (1) and (2):
+\[
+  H(X_0\mid X_n)=H(X_0\mid X_n,X_{n+1})\le H(X_0\mid X_{n+1}). \qquad\square
+\]
+
+%-----------------------------------------------------------------------
+\section*{Problem 3.8}
+
+Let $X_1,X_2,\ldots$ be i.i.d.\ copies of $X$.  Taking the $n$-th root
+and then the logarithm:
+\[
+  \frac{1}{n}\log(X_1 X_2\cdots X_n)
+  =\frac{1}{n}\sum_{i=1}^{n}\log X_i
+  \xrightarrow{\Pr} \mathbb{E}[\log X]
+  \quad\text{(weak LLN)}.
+\]
+Computing the expectation:
+\[
+  \mathbb{E}[\log X]
+  =\frac{1}{2}\log 1+\frac{1}{4}\log 2+\frac{1}{4}\log 3
+  =\frac{\log 2}{4}+\frac{\log 3}{4}
+  =\frac{\log 6}{4}.
+\]
+Therefore
+\[
+  (X_1 X_2\cdots X_n)^{1/n}
+  \xrightarrow{\Pr}
+  e^{\mathbb{E}[\log X]}
+  =e^{(\log 6)/4}
+  =6^{1/4}=\sqrt[4]{6}\approx 1.565.
+\]
+
+%-----------------------------------------------------------------------
+\section*{Problem 3.12}
+
+Let $\hat{p}_n$ denote the empirical PMF of $n$ i.i.d.\ samples from $p$.
+
+\textbf{(a)} Suppose $\mathcal{X}=\{0,1\}$ (binary).  Write the $2n$ samples
+as two independent halves of size $n$, giving empirical PMFs $\hat{p}_n$
+and $\hat{p}_n'$, so that
+\[
+  \hat{p}_{2n}=\tfrac{1}{2}\hat{p}_n+\tfrac{1}{2}\hat{p}_n'.
+\]
+By convexity of $D(\cdot\|p)$ in its first argument:
+\[
+  ED\!\left(\hat{p}_{2n}\|p\right)
+  =ED\!\left(\tfrac{1}{2}\hat{p}_n+\tfrac{1}{2}\hat{p}_n'\,\big\|\,p\right)
+  \le\tfrac{1}{2}ED(\hat{p}_n\|p)+\tfrac{1}{2}ED(\hat{p}_n'\|p).
+\]
+Since $\hat{p}_n$ and $\hat{p}_n'$ are identically distributed,
+$ED(\hat{p}_n'\|p)=ED(\hat{p}_n\|p)$, and therefore
+\[
+  ED(\hat{p}_{2n}\|p)\le ED(\hat{p}_n\|p). \qquad\square
+\]
+
+\textbf{(b)} For arbitrary discrete $\mathcal{X}$, write $\hat{p}_n$ as the
+average of the $n$ leave-one-out empirical PMFs: deleting sample $X_i$
+from the $n$ samples yields a $(n-1)$-sample empirical PMF $\hat{p}_n^{(i)}$,
+and
+\[
+  \hat{p}_n=\frac{1}{n}\sum_{i=1}^{n}\hat{p}_n^{(i)}.
+\]
+By convexity of $D(\cdot\|p)$:
+\[
+  ED(\hat{p}_n\|p)
+  \le\frac{1}{n}\sum_{i=1}^{n}ED\!\left(\hat{p}_n^{(i)}\|p\right).
+\]
+Each $\hat{p}_n^{(i)}$ is the empirical PMF of $n-1$ i.i.d.\ samples
+(the remaining samples after deleting $X_i$), so
+$ED(\hat{p}_n^{(i)}\|p)=ED(\hat{p}_{n-1}\|p)$ for every $i$.  Hence
+\[
+  ED(\hat{p}_n\|p)\le ED(\hat{p}_{n-1}\|p). \qquad\square
+\]
+
+%-----------------------------------------------------------------------
+\section*{Problem 5.37}
+
+For each code we check \textbf{(a) unique decodability} and
+\textbf{(b) the instantaneous (prefix-free) property}.
+A code is instantaneous iff no codeword is a prefix of another, which is
+equivalent to all codewords being leaves in a binary trie.
+Every instantaneous code is uniquely decodable.
+
+\medskip
+\textbf{$C_1=\{00,01,0\}$.}
+The codeword $0$ is a prefix of both $00$ and $01$, so $C_1$ is
+\emph{not instantaneous}.  Moreover, the string $00$ admits two
+decodings: the single codeword $\langle 00\rangle$ and the pair
+$\langle 0,0\rangle$.  Hence $C_1$ is \emph{not uniquely decodable}.
+
+\medskip
+\textbf{$C_2=\{00,01,100,101,11\}$.}
+The binary trie has five leaves at the positions listed; no codeword
+extends another.  (Formally, the three length-2 words start with $0$,
+$0$, or $11$, while the two length-3 words start with $10$—none can be
+a prefix of another across length classes.)
+The Kraft sum is $3\cdot 2^{-2}+2\cdot 2^{-3}=1$, confirming a valid
+prefix-free code.  Hence $C_2$ is \emph{instantaneous} and therefore
+\emph{uniquely decodable}.
+
+\medskip
+\textbf{$C_3=\{0,10,110,1110,\ldots\}$.}
+The $k$-th codeword ($k\ge 1$) consists of $(k-1)$ ones followed by a
+zero.  It ends with $0$, while the next longer codeword has a $1$ in
+that position, so no codeword is a prefix of any other.  The Kraft sum
+is $\sum_{k=1}^{\infty}2^{-k}=1$.  Hence $C_3$ is \emph{instantaneous}
+and \emph{uniquely decodable}.
+
+\medskip
+\textbf{$C_4=\{0,00,000,0000\}$.}
+The codeword $0$ is a prefix of every other codeword, so $C_4$ is
+\emph{not instantaneous}.  The string $0000$ has (at least) two
+decodings: the single codeword $\langle 0000\rangle$ and the pair
+$\langle 00,00\rangle$.  Hence $C_4$ is \emph{not uniquely decodable}.
+
+\bigskip
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Code & Uniquely decodable & Instantaneous\\
+\hline
+$C_1$ & No  & No  \\
+$C_2$ & Yes & Yes \\
+$C_3$ & Yes & Yes \\
+$C_4$ & No  & No  \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
