@@ -34,17 +34,10 @@
 \medskip
 \textbf{(a) $D(p_X\|p_Y) = +\infty$.}
 
-$p_X$ is defined at $x=0$ (its value is $\tau > 0$),
-but $p_Y$ is \emph{not} defined at $x=0$ (its domain starts at 1).
-We treat $p_Y(0) = 0$.
-The $x=0$ term inside the KL sum then becomes:
+Since $p_Y(0)=0$ but $p_X(0)=\tau>0$, the $x=0$ term diverges:
 \[
-  p_X(0)\cdot\ln\frac{p_X(0)}{p_Y(0)}
-  = \tau\cdot\ln\frac{\tau}{0}
-  = \tau\cdot(+\infty)
-  = +\infty.
+  p_X(0)\ln\frac{p_X(0)}{p_Y(0)} = \tau\ln\frac{\tau}{0} = +\infty.
 \]
-Since one term is already $+\infty$, the whole sum is $+\infty$.
 
 \medskip
 \textbf{(b) $D(p_Y\|p_X)$.}
@@ -78,27 +71,23 @@ Using $\sum_{z=1}^{k}(z-1)=k(k-1)/2$:
 %-----------------------------------------------------------------------
 \section*{Problem 2}
 
-We show $H(X_0\mid X_n)\le H(X_0\mid X_{n+1})$ for every $n$.
+We show $H(X_0\mid X_n)\le H(X_0\mid X_{n+1})$ for every $n\ge 0$.
 
-\textbf{Step 1.} The Markov property means $X_0\perp X_{n+1}\mid X_n$,
-so knowing $X_{n+1}$ on top of $X_n$ adds nothing about $X_0$:
+The Markov property gives $X_0\perp X_{n+1}\mid X_n$, so conditioning on $X_{n+1}$ adds nothing about $X_0$ once $X_n$ is known:
 \[
   H(X_0\mid X_n,\;X_{n+1}) = H(X_0\mid X_n). \tag{1}
 \]
-
-\textbf{Step 2.} Conditioning on more variables never increases entropy:
+Conditioning on fewer variables cannot decrease entropy:
 \[
   H(X_0\mid X_n,\;X_{n+1}) \le H(X_0\mid X_{n+1}). \tag{2}
 \]
-
-Combining (1) and (2):
+Chaining (1) and (2):
 \[
   H(X_0\mid X_n)
   \;\overset{(1)}{=}\;
   H(X_0\mid X_n,X_{n+1})
   \;\overset{(2)}{\le}\;
   H(X_0\mid X_{n+1}).
-  \qquad\square
 \]
 
 %-----------------------------------------------------------------------
