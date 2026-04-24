@@ -16,17 +16,45 @@
 - **Hariç:** W06 slaytları 4-8 (fixed-length source coding için error exponents)
 - Sonunda çözümler ODTÜClass'a yüklenecek
 
-## Ders Kapsamı (Hocanın Syllabus'una Göre)
+## GÜNCELLEME (24 Nisan)
 
-| Hafta | Konu | Kitap |
-|-------|------|-------|
-| 1-2 | Measures of information | Ch. 2 |
-| 3 | Asymptotic Equipartition Property (AEP) | Ch. 3 |
-| 4-6 | Source Coding | Ch. 5 |
-| 7-11 | Channel Coding and Capacity | Ch. 7 |
-| 12 | Differential Entropy (sınavda yok) | Ch. 8 |
-| 13-14 | Gaussian Channel (sınavda yok) | Ch. 9 |
-| 16 | Rate-Distortion Theory (sınavda yok) | Ch. 10 |
+### Barış'ın Resmi Duyurusu
+
+"Exam covers all material discussed up to and including the lecture on April 30th, except for the error exponents for the fixed-length source coding problem (i.e., slides 4-8 of Week 6). We will cover these error exponents in the make-up lecture at 10:30 on Thursday, April 30."
+
+Yani:
+- 30 Nisan'a kadar işlenen her şey sınavda
+- 30 Nisan'daki make-up dersi (error exponents) **hariç**
+- W06 slaytları 4-8 **hariç**
+
+### Kapsam Değişikliği
+
+W10 slaytı açıldı ve **tamamen Differential Entropy (Ch. 8)**. Hoca programı hızlandırmış. Yani sınav kapsamı:
+- Chapter 2 (Measures of info)
+- Chapter 3 (AEP)
+- Chapter 5 (Source coding)
+- Chapter 7 (Channel capacity)
+- **Chapter 8 (Differential entropy)** ← YENİ, W10'da işlendi
+- Muhtemelen W11 dersi (27 Nisan Pazartesi) de kapsamda olacak — o slaytı bekle
+
+### Durum Tespiti
+
+- Bugün: 24 Nisan (başlangıç planı 20 Nisan'dı → 4 gün kayıp)
+- Sınav: 9 Mayıs
+- Kalan: 15 gün
+- Şenlik: 6-9 Mayıs
+- **Etkin çalışma süresi: 24 Nisan - 5 Mayıs = 12 gün**
+
+## Ders Kapsamı (Güncel)
+
+| Hafta | Konu | Kitap | Sınavda? |
+|-------|------|-------|----------|
+| 1-3 | Measures of info + AEP | Ch. 2, 3 | Evet |
+| 4-6 | Source Coding | Ch. 5 | Evet (W06 s4-8 hariç) |
+| 7-9 | Channel Coding | Ch. 7 | Evet |
+| 10 | Differential Entropy | Ch. 8 | **Evet** (önce dışındaydı, içeri girdi) |
+| 13-14 | Gaussian Channel | Ch. 9 | Hayır |
+| 16 | Rate-Distortion | Ch. 10 | Hayır |
 
 **Kitap versiyonu:** Cover & Thomas, Elements of Information Theory, **2. baskı (2006)**. Dizinde `Elements of Information Theory - 2005 - Cover.pdf`.
 
@@ -72,138 +100,186 @@ Tüm slaytlardaki ispatların büyük çoğunluğu bu 7 aracın kombinasyonu:
 | W07 | Channel coding setup, DMC, Shannon capacity/radius, symmetric channels, channel coding theorem achievability | Achievability (random coding + typicality) |
 | W08 | Weak converse (Fano), strong converse (Chebyshev), feedback channels | Weak converse, strong converse, feedback versions |
 | W09 | Source-channel separation theorem | Achievability + converse + strong converse |
-| W10 | 24 Nisan'da açılacak | Henüz yok |
+| W10 | Differential entropy (Ch 8): CDF review, h(X) tanımı, uniform/exp/Gaussian örnekleri, AEP for continuous r.v., h(X) vs H(X), multivariate normal, Hadamard, MI for continuous | Concavity of h, conditioning reduces h, AEP for continuous, multivariate normal entropy, Hadamard's inequality |
+| W11 | 28 Nisan Pazartesi dersi (bekleniyor) | Slayt gelince eklenecek |
 
 ---
 
-## Zaman Planı
+## Zaman Planı (24 NİSAN BAŞLANGIÇLI)
 
-**Bugün:** 20 Nisan | **Sınav:** 9 Mayıs | **Kalan:** 19 gün
+**Bugün:** 24 Nisan | **Sınav:** 9 Mayıs | **Kalan:** 15 gün
 
-### Şenlik Notu
+Önceki planda 20 Nisan'da başlayacaktın, 4 gün kaybedildi. Plan şenliğe göre ayarlı: **5 Mayıs'a kadar ana çalışma bitecek.**
 
-6-9 Mayıs METU Şenliği. Planı şenliğe göre ayarlıyoruz: tüm ana çalışma 5 Mayıs'a kadar bitecek, şenliğe gönül rahatlığıyla gideceğiz.
+### Etkin Çalışma Süresi
 
-### Takvim
+- **24 Nisan - 5 Mayıs:** Ana çalışma = 12 gün
+- **6-8 Mayıs:** Şenlik + hafif tekrar
+- **9 Mayıs:** Sınav
 
-| Tarih | Aktivite | Saat/gün |
-|-------|----------|----------|
-| 20-24 Nisan | Temeller: notasyon + W01-W03 + kitap Ch 2-3 | 1.5-2 saat |
-| 24 Nisan | W10 slaytını dizine ekle, kapsamı güncelle | - |
-| 25-27 Nisan (hafta sonu) | Source coding: W04-W06 + kitap Ch 5 + Slepian-Wolf | 3-4 saat |
-| 28 Nisan - 2 Mayıs | Channel coding: W07-W09 + kitap Ch 7 (EN AĞIR BLOK) | 2-3 saat |
-| 30 Nisan | Son ders (error exponents - sınavda yok ama dinle) | - |
-| 3-5 Mayıs | Cheat sheet hazırlama + HW1-4 tekrarı + eksikler | 4-5 saat |
-| 6-8 Mayıs | Şenlik. Sabah 1 saat cheat sheet review, akşam şenlik | 1 saat |
-| 8 Mayıs akşamı | Erken dön, erken yat | - |
-| 9 Mayıs 11:00 | Sınav | - |
+### Kompakt Takvim
 
-**Toplam planlanmış çalışma: ~47 saat.** İhtiyaç ~26-30 saat, fazlası tampon.
+| Tarih | Gün | Aktivite | Saat |
+|-------|-----|----------|------|
+| 24 Nisan Per | Bugün | **BAŞLA:** W01 + Kitap Ch 2.1-2.7 (entropy, MI, Jensen, chain rules) | 3 |
+| 25 Nisan Cum | | W02 + Kitap Ch 2.8-2.10, Ch 3 (Fano, DPI, AEP) | 3 |
+| 26 Nisan Cts | | W03 (KL divergence full) + kitap Ch 2 tekrar | 3 |
+| 27 Nisan Paz | | W04 + W05 + Kitap Ch 5.1-5.9 (source coding) | 4 |
+| 28 Nisan Pzt | W11 dersi | W06 (s4-8 hariç) + Slepian-Wolf + Kitap Ch 15.4. **W11 slaytını al.** | 4 |
+| 29 Nisan Sal | | W07 + Kitap Ch 7.1-7.7 (channel coding, capacity, achievability) | 4 |
+| 30 Nisan Çar | Make-up ders | W08 (converse + feedback). **10:30 make-up dersine git** (error exponents) | 3 |
+| 1 Mayıs Per | | W09 (source-channel separation) + W10 yarısı (differential entropy giriş) | 3 |
+| 2 Mayıs Cum | | W10 tam bitir (differential entropy, multivariate normal, MI for continuous) + W11 | 4 |
+| 3 Mayıs Cts | | **Cheat sheet sayfa 1-2** + HW1-2 tekrar | 5 |
+| 4 Mayıs Paz | | **Cheat sheet sayfa 3-4** + HW3-4 tekrar | 5 |
+| 5 Mayıs Pzt | | **Cheat sheet sayfa 5** (ispat iskeletleri) + son tekrar. Plan bitti. | 4 |
+| 6 May Sal | Şenlik | Sabah 1 saat cheat sheet review, akşam şenlik | 1 |
+| 7 May Çar | Şenlik | Sabah 1 saat cheat sheet review, akşam şenlik | 1 |
+| 8 May Per | Şenlik | Sabah 1 saat review, akşam şenlik ama erken dön | 1 |
+| 9 Mayıs Cum | **SINAV** | 11:00-14:00 EA209 | - |
+
+**Ana çalışma (24 Nis - 5 May): ~45 saat**
+**Şenlik dönemi (6-8 May): ~3 saat**
+**Toplam: ~48 saat**
+
+### Gerçekçi Değerlendirme
+
+Önceki plan 47 saatle rahattı. Bu plan 48 saat ama **daha sıkıştırılmış** (12 günde tüm ana iş). Günlük ortalama 3.5-4 saat. Olimpiyatçı altyapınla bu sürdürülebilir ama:
+
+- ⚠️ **27 Nisan Pazar günü 4 saat** kritik — source coding bitirmek lazım
+- ⚠️ **2 Mayıs Cuma 4 saat** kritik — differential entropy hem tanımları hem W11'i toparla
+- ⚠️ **3-5 Mayıs** cheat sheet günleri 5 saat — bu çok ama cheat sheet hazırlarken zaten tekrar yapmış oluyorsun
+
+Eğer bir gün bir şey çıkar da çalışamazsan, ertesi güne öteleme — **aynı gün gece telafi et**. 12 günlük plan tampon bırakmıyor.
 
 ---
 
 ## Cheat Sheet Stratejisi (5 çift taraflı sayfa = 10 yüzey)
+
+Differential entropy (W10) eklenmesiyle düzenleme yapıldı:
 
 | Sayfa | İçerik |
 |-------|--------|
 | 1 | Tüm temel tanımlar: H, H(X\|Y), I(X;Y), D(p\|\|q), H_α, D_α, typical set, jointly typical set. Tanımlar arası ilişkiler (Venn diyagramı). |
 | 2 | Temel araçlar: Jensen, log-sum, Fano, DPI, KLD ≥ 0 / chain rule / convexity, conditioning reduces entropy, tüm chain rule formülleri |
 | 3 | Source coding: Kraft, McMillan, Shannon code bounds, Huffman, fixed-length achievability/converse, Slepian-Wolf rate region |
-| 4 | Channel coding: Capacity tanımı, symmetric/Gallager-symmetric capacity formülleri, BSC/BEC/noisy typewriter örnekleri, channel coding theorem key steps |
-| 5 | Kritik ispatların iskeletleri: Achievability (random coding + typicality), weak converse (Fano → bound), strong converse (Chebyshev trick), source-channel separation |
+| 4 | Channel coding + Differential entropy: Capacity tanımı, symmetric/Gallager-symmetric capacity formülleri, BSC/BEC/noisy typewriter örnekleri, channel coding theorem key steps. **h(X) tanımı, uniform/exp/Gaussian için h değerleri, multivariate normal h = (1/2)log((2πe)^n det(K))** |
+| 5 | Kritik ispatların iskeletleri: Achievability (random coding + typicality), weak converse (Fano → bound), strong converse (Chebyshev trick), source-channel separation, **AEP for continuous, Hadamard's inequality** |
 
 ---
 
-## Faz 1: Temelleri Kurmak (20-24 Nisan)
+## Faz 1: Temeller (24-26 Nisan, 3 gün)
 
 ### Hedef
 
-Notasyona hakim olmak. Artık H(X), H(X|Y), I(X;Y), D(p||q), p_{Y|X}, p_{X_iota} gibi semboller görünce otomatik anlamak.
+Notasyona hakim olmak. H(X), H(X|Y), I(X;Y), D(p||q), p_{Y|X}, p_{X_iota} gibi semboller görünce otomatik anlamak. 7 çekirdek aracın her birinin ne işe yaradığını bilmek.
 
 ### Günlük Plan
 
-- **20 Nisan:** Kitap Ch 2.1-2.4 oku (entropy tanımları). W01 s15-26 paralel oku.
-- **21 Nisan:** Kitap Ch 2.5-2.7 (chain rules, Jensen, log-sum). W01'in geri kalanı.
-- **22 Nisan:** Kitap Ch 2.8-2.10 (DPI, sufficient stats, Fano). W02 s1-7.
-- **23 Nisan:** Kitap Ch 3 (AEP). W02 s18-24 (AEP, typical sets).
-- **24 Nisan:** W03 tüm (KL divergence derinlemesine). W10 slaytı geldi mi bak.
-
-### Kontrol Soruları (Faz 1 sonunda cevaplayabilmen lazım)
-
-- H(X), H(X|Y), I(X;Y), D(p||q) tanımlarını hatırlayabiliyor musun?
-- I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) neden?
-- Jensen eşitsizliğini ne zaman uygulanır?
-- KLD neden non-negatif? İspatı?
-- AEP ne diyor?
-
----
-
-## Faz 2: Source Coding (25-27 Nisan)
-
-### Hedef
-
-Source coding'in tüm araçlarına hakim olmak. Slepian-Wolf'un hem achievability hem converse ispatını anlamak.
-
-### Günlük Plan
-
-- **25 Nisan:** Kitap Ch 5.1-5.5. W04 tüm (codes, Kraft, Shannon code).
-- **26 Nisan:** Kitap Ch 5.6-5.9. W05 tüm (Huffman, Shannon-Fano-Elias, fixed length coding).
-- **27 Nisan:** W06 (error exponents HARİÇ s4-8). Slepian-Wolf full ispat. Kitap Ch 15.4.
+- **24 Nisan (Per) — 3 saat:** Kitap Ch 2.1-2.7 (entropy, MI, Jensen, chain rules). W01 tüm.
+- **25 Nisan (Cum) — 3 saat:** Kitap Ch 2.8-2.10 + Ch 3 (DPI, sufficient stats, Fano, AEP). W02 tüm.
+- **26 Nisan (Cts) — 3 saat:** W03 tüm (KL divergence derinlemesine). Ch 2 kritik yerleri tekrar.
 
 ### Kontrol Soruları
 
-- Kraft inequality nedir, ispatı?
-- Huffman code neden optimal?
-- Fixed length source coding converse (Fano ile) nasıl ispatlanıyor?
-- Slepian-Wolf rate region?
-- Slepian-Wolf achievability'de typicality counting nerede kullanılıyor?
+- H, H(X|Y), I(X;Y), D(p||q) tanımlarını yazabiliyor musun?
+- I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) neden ikisi de?
+- Jensen eşitsizliği nasıl uygulanır? Hangi function convex, hangi concave?
+- KLD neden non-negatif? İspatı?
+- AEP ne diyor? Typical set tanımı?
+- Fano's inequality ifadesi?
 
 ---
 
-## Faz 3: Channel Coding (28 Nisan - 2 Mayıs)
+## Faz 2: Source Coding (27-28 Nisan, 2 gün)
 
 ### Hedef
 
-Dersin ağırlık merkezi. Channel capacity, coding theorem, achievability, weak/strong converse, feedback, source-channel separation.
+Source coding'in tüm araçlarına hakim olmak. Slepian-Wolf'un achievability + converse ispatlarını anlamak.
 
 ### Günlük Plan
 
-- **28 Nisan:** Kitap Ch 7.1-7.5. W07 s1-12 (DMC, capacity, symmetric channels).
-- **29 Nisan:** Kitap Ch 7.6-7.7. W07 s13-19 (achievability proof).
-- **30 Nisan:** W08 s1-7 (weak + strong converse). Ders akşamı: error exponents (sınavda yok).
-- **1 Mayıs:** W08 s8-13 (feedback).
-- **2 Mayıs:** W09 (source-channel separation). W10 varsa oku. HW4 sorularını çöz.
+- **27 Nisan (Paz) — 4 saat:** Kitap Ch 5.1-5.9. W04 + W05 tüm (codes, Kraft, Shannon code, Huffman, Shannon-Fano-Elias, fixed length coding).
+- **28 Nisan (Pzt) — 4 saat:** W06 (s4-8 HARİÇ). Slepian-Wolf full ispat. Kitap Ch 15.4. **W11 slaytını dizine al** (dersin sonra).
+
+### Kontrol Soruları
+
+- Kraft inequality ifadesi + ispat fikri?
+- Huffman code neden optimal?
+- Fixed length source coding converse Fano ile nasıl?
+- Slepian-Wolf rate region?
+- Achievability'de typicality counting nasıl işliyor?
+
+---
+
+## Faz 3: Channel Coding (29-30 Nisan, 2 gün)
+
+### Hedef
+
+Dersin ağırlık merkezi. Capacity, coding theorem, achievability, weak/strong converse, feedback.
+
+### Günlük Plan
+
+- **29 Nisan (Sal) — 4 saat:** Kitap Ch 7.1-7.7. W07 tüm (DMC, capacity, symmetric channels, achievability proof).
+- **30 Nisan (Çar) — 3 saat + make-up dersi:** W08 tüm (weak + strong converse + feedback). **10:30 make-up dersine git** (error exponents - sınavda yok ama dinle).
 
 ### Kontrol Soruları
 
 - Shannon capacity tanımı, Shannon center nedir?
-- Channel coding theorem achievability nasıl kanıtlanıyor? (Random coding + typicality + Markov existence)
+- Channel coding theorem achievability nasıl? (Random coding + typicality + Markov existence)
 - Weak converse nasıl? (Fano → I ≤ nC → Pe ≥ (R-C)/R)
 - Strong converse? (Chebyshev trick)
-- Feedback capacity'yi artırıyor mu?
-- BSC, BEC kapasiteleri ezber hazır mı?
+- Feedback capacity artırıyor mu?
+- BSC, BEC, noisy typewriter capacity formülleri?
 
 ---
 
-## Faz 4: Cheat Sheet + Pratik (3-5 Mayıs)
+## Faz 4: Joint Source-Channel + Differential Entropy (1-2 Mayıs, 2 gün)
 
 ### Hedef
 
-Cheat sheet'i finalize et. HW'leri tekrar gez. Eksik yerleri kapat.
+W09 (source-channel separation) ve W10 (differential entropy) konularını bitirmek. Bu faz çok önemli çünkü W10 sonradan girdi ve çoğu öğrenci buraya yeterince çalışmamış olacak — **senin avantajın olabilir**.
 
 ### Günlük Plan
 
-- **3 Mayıs:** Cheat sheet sayfa 1-2 (tanımlar + araçlar). HW1-2 sorularını hızlıca gez.
-- **4 Mayıs:** Cheat sheet sayfa 3-4 (source + channel coding). HW3-4 sorularını gez.
-- **5 Mayıs:** Cheat sheet sayfa 5 (ispat iskeletleri). Slaytlardaki H.W. işaretli soruları çöz. Son tekrar.
+- **1 Mayıs (Per) — 3 saat:** W09 tüm (source-channel separation: achievability + converse + strong converse). W10 s1-10 (CDF review, h(X) tanımı, examples, AEP for continuous).
+- **2 Mayıs (Cum) — 4 saat:** W10 s11-18 tamamla (multivariate normal, Hadamard, MI for continuous). W11 slaytını bitir. HW4 sorularını tekrar çöz.
+
+### Kontrol Soruları
+
+- Source-channel separation theorem ifadesi, hangi koşullarla?
+- Differential entropy h(X) ile H(X) arasında ne fark?
+- h(X) negatif olabilir mi? Hangi örneklerde?
+- Gaussian için h(X) formülü? Uniform için?
+- Multivariate normal'ın differential entropy'si?
+- Hadamard's inequality?
+- I(X;Y) continuous r.v. için nasıl tanımlı?
 
 ---
 
-## Faz 5: Şenlik + Final Review (6-8 Mayıs)
+## Faz 5: Cheat Sheet + Pratik (3-5 Mayıs, 3 gün)
 
-- 6-8 Mayıs sabahları: 1 saat cheat sheet'e göz at, güvenini tazele.
-- 6-8 Mayıs akşamları: Şenlik.
-- 8 Mayıs akşamı: Erken dön, cheat sheet'i yanına al, erken yat.
+### Hedef
+
+Cheat sheet'i finalize et. HW'leri tekrar gez. Eksik yerleri kapat. Bu günler **tekrar + pekiştirme**, yeni öğrenme değil.
+
+### Günlük Plan
+
+- **3 Mayıs (Cts) — 5 saat:** Cheat sheet sayfa 1-2 (tanımlar + temel araçlar). HW1-2 sorularını hızlıca gez.
+- **4 Mayıs (Paz) — 5 saat:** Cheat sheet sayfa 3-4 (source/channel coding + differential entropy). HW3-4 sorularını gez.
+- **5 Mayıs (Pzt) — 4 saat:** Cheat sheet sayfa 5 (ispat iskeletleri). Slaytlardaki H.W. işaretli soruları çöz. Son tekrar.
+
+### 5 Mayıs akşamı hazır olmalısın
+
+Çalışma bitti demek. Şenliğe gönül rahatlığıyla giriyorsun.
+
+---
+
+## Faz 6: Şenlik + Final Review (6-8 Mayıs)
+
+- **6-8 Mayıs sabahları (1 saat):** Kahvaltı sırasında cheat sheet'e göz at, güvenini tazele.
+- **6-8 Mayıs akşamları:** Şenlik. Rahat ol.
+- **8 Mayıs akşamı:** Erken dön, cheat sheet yanında, erken yat.
 
 ---
 
@@ -253,6 +329,21 @@ Cheat sheet'i finalize et. HW'leri tekrar gez. Eksik yerleri kapat.
 - BEC capacity: 1-alpha
 - Channel coding theorem: R < C achievable, R > C not
 - Feedback capacity = capacity (for memoryless)
+
+### Differential Entropy (YENİ - W10)
+- h(X) = integral f_X(x) log(1/f_X(x)) dx (continuous analog of H)
+- h(X) negatif olabilir, sonsuz olabilir, tanımsız olabilir
+- Uniform on [0, l]: h = log l
+- Exponential with rate lambda: h = log(e/lambda)
+- Gaussian N(mu, sigma^2): h = (1/2) log(2 pi e sigma^2)
+- Multivariate normal N(mu, K): h = (1/2) log((2 pi e)^n det(K))
+- AEP for continuous: (1/n) log(1/f(X_1^n)) → h(X)
+- Hadamard: det(K) ≤ prod K_{i,i} for positive definite K
+- Chain rule for h: h(X,Y) = h(X|Y) + h(Y) = h(X) + h(Y|X)
+- Independence bound: h(X_1^n) ≤ sum h(X_i)
+- h(X|Y) ≤ h(X) (conditioning reduces h, eşitlik iff independent)
+- I(X;Y) = h(X) - h(X|Y) = h(Y) - h(Y|X) (aynı yapı)
+- If Y = aX + b: h(Y) = h(X) + log|a|
 
 ---
 
